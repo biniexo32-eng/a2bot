@@ -19,7 +19,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # ከ Render Environment Variables ቶከኑን እና የአስተዳዳሪውን ID በደህንነት ማንበብ
-TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "").strip()
 ADMIN_CHAT_ID = int(os.environ.get("ADMIN_CHAT_ID", "644789117"))
 
 # -------------------------------------------------------------
