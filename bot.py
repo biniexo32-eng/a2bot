@@ -17,6 +17,9 @@ logging.basicConfig(
     level=logging.INFO
 )
 logger = logging.getLogger(__name__)
+# Prevent Telegram API URLs (which contain the bot token) from appearing in logs.
+logging.getLogger("httpx").setLevel(logging.WARNING)
+logging.getLogger("telegram").setLevel(logging.WARNING)
 
 # ከ Render Environment Variables ቶከኑን እና የአስተዳዳሪውን ID በደህንነት ማንበብ
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN", "").strip()
